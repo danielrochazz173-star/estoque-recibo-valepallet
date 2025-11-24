@@ -647,12 +647,13 @@
                 const valorTotal = quantidadePaletes * valorPorPalete;
 
                 // Gerar 2 vias do recibo
+                const larguraLogo = empresa === 'trindade' ? '360' : '460';
                 for (let i = 0; i < 2; i++) {
                     const recibo = `
                         <div class="recibo">
                             <h3>RECIBO</h3>
                             <div class="imagemRecibo" style="display: flex; justify-content: center;">
-                                <img src="${imagemSrc}" alt="Imagem do Recibo" width="460">
+                                <img src="${imagemSrc}" alt="Imagem do Recibo" width="${larguraLogo}">
                             </div>
                             <p>Recebemos de <strong>${nomeCliente}</strong> a importância supramencionada de <strong>R$ ${valorTotal.toFixed(2).replace('.', ',')}</strong></p>
                             <p>${quantidadePaletes} Paletes / R$ ${valorPorPalete.toFixed(2).replace('.', ',')} por palete</p>
@@ -682,12 +683,13 @@
 
                 const observacao = `OBS: Ficamos com <strong>${quantidadePaletes}</strong> pallets.`;
 
+                const larguraLogo = empresa === 'trindade' ? '360' : '460';
                 for (let i = 0; i < numVias; i++) {
                     const recibo = `
                         <div class="recibo">
                             <h3>RECIBO DE VALE PALLET</h3>
                             <div class="imagemRecibo" style="display: flex; justify-content: center;">
-                                <img src="${imagemSrc}" alt="Imagem do Recibo" width="460">
+                                <img src="${imagemSrc}" alt="Imagem do Recibo" width="${larguraLogo}">
                             </div>
                             <p>CLIENTE: <strong>${nomeCliente}</strong></p>
                             <p>NF: <strong>${numeroNF}</strong></p>
