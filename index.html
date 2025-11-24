@@ -10,6 +10,57 @@
             box-sizing: border-box;
         }
 
+        .aviso-fixo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            border-radius: 8px;
+            padding: 12px 16px;
+            max-width: 260px;
+            font-size: 13px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+        }
+
+        .popup-aviso {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+        }
+
+        .popup-conteudo {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px 40px;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup-conteudo h4 {
+            margin: 0 0 15px 0;
+            font-size: 20px;
+            color: #c06c00;
+        }
+
+        .popup-conteudo p {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .popup-conteudo button {
+            width: auto;
+            padding: 10px 24px;
+        }
+
         body {
             background-color: #f5f5f5;
             font-family: Arial, sans-serif;
@@ -356,6 +407,17 @@
     <iframe id="printFrame" style="display: none;"></iframe>
 
     <div class="author">Criado por: Daniel Rocha</div>
+    <div class="aviso-fixo">
+        ⚠️ Aos sábados o procedimento deve ser feito pela <strong>Trindade</strong>. Garanta que a empresa esteja correta antes de gerar.
+    </div>
+
+    <div class="popup-aviso" id="popupSabado">
+        <div class="popup-conteudo">
+            <h4>Atenção para hoje!</h4>
+            <p>Todo <strong>sábado</strong> o processo deve ser feito usando a empresa <strong>Trindade</strong>. Verifique antes de continuar.</p>
+            <button onclick="fecharPopupSabado()">Entendi</button>
+        </div>
+    </div>
 
     <script>
         // Configurações das empresas
@@ -428,6 +490,7 @@
         // Atualizar data ao carregar
         atualizarData();
         inicializarDatas();
+        verificarSabado();
 
         function atualizarData() {
             const dataHoje = new Date().toLocaleDateString('pt-BR', {
@@ -463,6 +526,18 @@
                 month: 'long',
                 year: 'numeric',
             });
+        }
+
+        function verificarSabado() {
+            const hoje = new Date();
+            if (hoje.getDay() === 6) {
+                const popup = document.getElementById('popupSabado');
+                popup.style.display = 'flex';
+            }
+        }
+
+        function fecharPopupSabado() {
+            document.getElementById('popupSabado').style.display = 'none';
         }
 
         function alterarTipo() {
