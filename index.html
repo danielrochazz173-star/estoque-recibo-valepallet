@@ -14,21 +14,23 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: #fff3cd;
-            color: #856404;
-            border: 1px solid #ffeeba;
-            border-radius: 8px;
-            padding: 12px 16px;
-            max-width: 260px;
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%);
+            color: #8b5a00;
+            border: 2px solid #ffd89b;
+            border-radius: 12px;
+            padding: 14px 18px;
+            max-width: 280px;
             font-size: 13px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 25px rgba(139, 90, 0, 0.25);
             z-index: 100;
+            backdrop-filter: blur(10px);
         }
 
         .popup-aviso {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.65);
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
             display: none;
             align-items: center;
             justify-content: center;
@@ -36,18 +38,23 @@
         }
 
         .popup-conteudo {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 30px 40px;
-            max-width: 420px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            border-radius: 20px;
+            padding: 35px 45px;
+            max-width: 450px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            border: 2px solid rgba(102, 126, 234, 0.2);
         }
 
         .popup-conteudo h4 {
-            margin: 0 0 15px 0;
-            font-size: 20px;
-            color: #c06c00;
+            margin: 0 0 18px 0;
+            font-size: 24px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
         }
 
         .popup-conteudo p {
@@ -58,29 +65,40 @@
 
         .popup-conteudo button {
             width: auto;
-            padding: 10px 24px;
+            padding: 12px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
 
         body {
-            background-color: #f5f5f5;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
+            min-height: 100vh;
         }
 
         .container {
             max-width: 700px;
             margin: 0 auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         h2 {
-            color: #333;
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 35px;
             text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .opcoes {
@@ -96,41 +114,56 @@
 
         .opcao-group label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #555;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 14px;
         }
 
         select {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
             font-size: 16px;
-            transition: border-color 0.3s;
+            transition: all 0.3s ease;
+            background: #ffffff;
+            color: #2d3748;
+            cursor: pointer;
+        }
+
+        select:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
         }
 
         select:focus {
             outline: none;
-            border-color: #007bff;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
 
         .recibo {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            padding: 25px;
             text-align: left;
             margin: 30px auto;
             max-width: 600px;
             position: relative;
+            border: 1px solid rgba(102, 126, 234, 0.1);
         }
 
         .recibo h3 {
             text-align: center;
-            color: #333;
-            font-size: 18px;
-            margin: 5px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 22px;
+            margin: 10px 0 20px 0;
+            font-weight: 700;
         }
 
         .imagemRecibo {
@@ -147,69 +180,85 @@
 
         label {
             display: block;
-            margin-top: 10px;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
+            margin-top: 12px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #4a5568;
             font-size: 14px;
         }
 
-        input,
-        select {
+        input {
             display: block;
             width: 100%;
-            padding: 12px;
-            margin-bottom: 10px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
             font-size: 16px;
-            transition: border-color 0.3s;
+            transition: all 0.3s ease;
+            background: #ffffff;
+            color: #2d3748;
+        }
+
+        input:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
         }
 
         input:focus {
             outline: none;
-            border-color: #007bff;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            background: #ffffff;
         }
 
         button {
             width: 100%;
-            padding: 15px;
-            margin-top: 20px;
-            background-color: #007bff;
+            padding: 16px 24px;
+            margin-top: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 12px;
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 700;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            letter-spacing: 0.5px;
         }
 
         button:hover {
-            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
         }
 
         button:active {
-            transform: scale(0.98);
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
         .valorTotal {
             text-align: right;
             margin-top: 15px;
-            font-weight: bold;
-            font-size: 1.3em;
+            font-weight: 700;
+            font-size: 1.4em;
             position: absolute;
-            top: 5px;
-            right: 15px;
-            color: #007bff;
+            top: 10px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .reciboFooter {
             text-align: center;
-            margin-top: 15px;
-            padding-top: 10px;
-            border-top: 1px solid #eee;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(102, 126, 234, 0.1);
             font-size: 13px;
+            color: #4a5568;
         }
 
         .reciboFooter p {
@@ -221,7 +270,11 @@
             bottom: 10px;
             left: 10px;
             font-size: 12px;
-            color: #777;
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.2);
+            padding: 6px 12px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
         }
 
         .campos-recibo {
@@ -243,7 +296,7 @@
         @media print {
             @page {
                 size: A4;
-                margin: 10mm;
+                margin: 8mm;
             }
 
             body {
@@ -258,63 +311,67 @@
 
             .opcoes,
             button,
-            .author {
-                display: none;
+            .author,
+            .aviso-fixo,
+            .popup-aviso {
+                display: none !important;
             }
 
             .recibo {
                 text-align: left;
-                padding: 10px;
+                padding: 8px;
                 margin: 0 auto;
                 page-break-inside: avoid;
                 max-width: 100%;
+                height: auto;
+                min-height: auto;
             }
 
             .imagemRecibo {
-                margin: 5px auto;
+                margin: 3px auto;
                 display: block;
                 text-align: center;
             }
 
             .imagemRecibo img {
-                max-height: 100px;
+                max-height: 70px;
                 width: auto;
             }
 
             .recibo h3 {
-                font-size: 16px;
-                margin: 3px 0;
+                font-size: 14px;
+                margin: 2px 0;
                 text-align: center;
             }
 
             .recibo p {
-                font-size: 13px;
-                margin: 5px 0;
-                line-height: 1.3;
+                font-size: 11px;
+                margin: 3px 0;
+                line-height: 1.2;
             }
 
             .valorTotal {
                 text-align: right;
                 font-weight: bold;
-                font-size: 1.2em;
+                font-size: 1.1em;
                 position: absolute;
-                top: 5px;
-                right: 10px;
+                top: 3px;
+                right: 8px;
             }
 
             .reciboFooter {
-                margin-top: 10px;
-                padding-top: 8px;
-                font-size: 11px;
+                margin-top: 8px;
+                padding-top: 5px;
+                font-size: 10px;
                 text-align: center;
             }
 
             .reciboFooter p {
-                margin: 3px 0;
+                margin: 2px 0;
             }
 
             .recibo+.recibo {
-                margin-top: 20px;
+                margin-top: 15px;
             }
         }
     </style>
@@ -663,7 +720,7 @@
                         <style>
                             @page {
                                 size: A4;
-                                margin: 15mm;
+                                margin: 8mm;
                             }
                             * {
                                 box-sizing: border-box;
@@ -677,69 +734,72 @@
                                 display: flex;
                                 flex-direction: column;
                                 align-items: center;
-                                justify-content: center;
+                                justify-content: flex-start;
                                 min-height: 100vh;
+                                height: auto;
                             }
                             .recibo {
-                                text-align: center;
+                                text-align: left;
                                 margin: 0 auto;
-                                max-width: 500px;
+                                max-width: 100%;
                                 width: 100%;
                                 position: relative;
-                                padding: 20px;
+                                padding: 8px;
                                 page-break-inside: avoid;
                                 display: flex;
                                 flex-direction: column;
-                                justify-content: space-between;
+                                justify-content: flex-start;
+                                height: auto;
+                                min-height: auto;
                             }
                             .recibo h3 {
-                                font-size: 18px;
-                                margin: 0 0 15px 0;
+                                font-size: 14px;
+                                margin: 2px 0 5px 0;
                                 text-align: center;
                                 font-weight: bold;
                             }
                             .imagemRecibo {
-                                margin: 10px auto 20px auto;
+                                margin: 3px auto 5px auto;
                                 display: block;
                                 text-align: center;
                             }
                             .imagemRecibo img {
-                                max-height: 90px;
+                                max-height: 70px;
                                 width: auto;
                                 display: block;
                                 margin: 0 auto;
                             }
                             .conteudo-recibo {
                                 text-align: left;
-                                margin: 15px 0;
-                                padding: 0 10px;
+                                margin: 5px 0;
+                                padding: 0 5px;
                             }
                             .conteudo-recibo p {
-                                font-size: 14px;
-                                margin: 12px 0;
-                                line-height: 1.5;
+                                font-size: 11px;
+                                margin: 3px 0;
+                                line-height: 1.2;
                             }
                             .valorTotal {
                                 text-align: right;
                                 font-weight: bold;
-                                font-size: 1.4em;
+                                font-size: 1.1em;
                                 position: absolute;
-                                top: 20px;
-                                right: 20px;
+                                top: 3px;
+                                right: 8px;
                                 color: #333;
                             }
                             .recibo+.recibo {
-                                margin-top: 30px;
+                                margin-top: 12px;
                             }
                             .reciboFooter {
                                 text-align: center;
-                                margin-top: 25px;
-                                padding-top: 15px;
+                                margin-top: 6px;
+                                padding-top: 5px;
                                 border-top: 1px solid #ddd;
-                                font-size: 12px;
+                                font-size: 10px;
                             }
                             .reciboFooter p {
-                                margin: 8px 0;
+                                margin: 2px 0;
                             }
                         </style>
                     </head>
