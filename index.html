@@ -651,21 +651,19 @@
                     const recibo = `
                         <div class="recibo">
                             <h3>RECIBO</h3>
-                            <div class="imagemRecibo">
-                                <img src="${imagemSrc}" alt="Imagem do Recibo">
+                            <div class="imagemRecibo" style="display: flex; justify-content: center;">
+                                <img src="${imagemSrc}" alt="Imagem do Recibo" width="460">
                             </div>
-                            <div class="conteudo-recibo">
-                                <p>Recebemos de <strong>${nomeCliente}</strong> a importância supramencionada de <strong>R$ ${valorTotal.toFixed(2).replace('.', ',')}</strong></p>
-                                <p>${quantidadePaletes} Paletes / R$ ${valorPorPalete.toFixed(2).replace('.', ',')} por palete</p>
-                                <p>Pagamento: ${formaPagamento}</p>
-                                <p>NF: <strong>${numeroNF}</strong></p>
-                                <p>Por ser verdade, firmamos o presente recibo.</p>
-                            </div>
-                            <div class="valorTotal">R$ ${valorTotal.toFixed(2).replace('.', ',')}</div>
+                            <p>Recebemos de <strong>${nomeCliente}</strong> a importância supramencionada de <strong>R$ ${valorTotal.toFixed(2).replace('.', ',')}</strong></p>
+                            <p>${quantidadePaletes} Paletes / R$ ${valorPorPalete.toFixed(2).replace('.', ',')} por palete</p>
+                            <p>Pagamento: ${formaPagamento}</p>
+                            <p>NF: <strong>${numeroNF}</strong></p>
+                            <p>Por ser verdade, firmamos o presente recibo.</p>
+                            <div class="valorTotal" style="position: absolute; top: 0; right: 0; margin-right: 25px;">R$ ${valorTotal.toFixed(2).replace('.', ',')}</div>
                             <div class="reciboFooter">
-                                <p><em>Queimados, ${dataFormatada}</em></p>
-                                <p>Assinatura: _________________________</p>
-                                <p>CNPJ: <strong>${config.cnpj}</strong></p>
+                                <p class="queimados"><em>Queimados, ${dataFormatada}</em></p>
+                                <p class="assinatura">Assinatura: _________________________</p>
+                                <p class="cnpj">CNPJ: <strong>${config.cnpj}</strong></p>
                             </div>
                         </div>
                     `;
@@ -688,19 +686,17 @@
                     const recibo = `
                         <div class="recibo">
                             <h3>RECIBO DE VALE PALLET</h3>
-                            <div class="imagemRecibo">
-                                <img src="${imagemSrc}" alt="Imagem do Recibo">
+                            <div class="imagemRecibo" style="display: flex; justify-content: center;">
+                                <img src="${imagemSrc}" alt="Imagem do Recibo" width="460">
                             </div>
-                            <div class="conteudo-recibo">
-                                <p>CLIENTE: <strong>${nomeCliente}</strong></p>
-                                <p>NF: <strong>${numeroNF}</strong></p>
-                                <p>${observacao}</p>
-                                <p>Por ser verdade, firmamos o presente recibo.</p>
-                            </div>
+                            <p>CLIENTE: <strong>${nomeCliente}</strong></p>
+                            <p>NF: <strong>${numeroNF}</strong></p>
+                            <p>${observacao}</p>
+                            <p>Por ser verdade, firmamos o presente recibo.</p>
                             <div class="reciboFooter">
-                                <p><em>Queimados, ${dataFormatada}</em></p>
-                                <p>Assinatura: _________________________</p>
-                                <p>CNPJ: <strong>${config.cnpj}</strong></p>
+                                <p class="queimados"><em>Queimados, ${dataFormatada}</em></p>
+                                <p class="assinatura">Assinatura: _________________________</p>
+                                <p class="cnpj">CNPJ: <strong>${config.cnpj}</strong></p>
                             </div>
                         </div>
                     `;
@@ -718,88 +714,36 @@
                         <meta charset="UTF-8">
                         <title>${tipo === 'recibo' ? 'Recibo' : 'Vale Pallet'}</title>
                         <style>
-                            @page {
-                                size: A4;
-                                margin: 8mm;
-                            }
-                            * {
-                                box-sizing: border-box;
-                                margin: 0;
-                                padding: 0;
-                            }
                             body {
                                 font-family: Arial, sans-serif;
-                                margin: 0;
-                                padding: 0;
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                justify-content: flex-start;
-                                min-height: 100vh;
-                                height: auto;
                             }
                             .recibo {
                                 text-align: left;
-                                margin: 0 auto;
-                                max-width: 100%;
-                                width: 100%;
+                                margin: 30px auto;
+                                max-width: 600px;
                                 position: relative;
-                                padding: 8px;
-                                page-break-inside: avoid;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: flex-start;
-                                height: auto;
-                                min-height: auto;
-                            }
-                            .recibo h3 {
-                                font-size: 14px;
-                                margin: 2px 0 5px 0;
-                                text-align: center;
-                                font-weight: bold;
                             }
                             .imagemRecibo {
-                                margin: 3px auto 5px auto;
+                                margin: 20px auto;
                                 display: block;
-                                text-align: center;
-                            }
-                            .imagemRecibo img {
-                                max-height: 70px;
-                                width: auto;
-                                display: block;
-                                margin: 0 auto;
-                            }
-                            .conteudo-recibo {
-                                text-align: left;
-                                margin: 5px 0;
-                                padding: 0 5px;
-                            }
-                            .conteudo-recibo p {
-                                font-size: 11px;
-                                margin: 3px 0;
-                                line-height: 1.2;
                             }
                             .valorTotal {
                                 text-align: right;
+                                margin-top: 15px;
                                 font-weight: bold;
-                                font-size: 1.1em;
+                                font-size: 1.5em;
                                 position: absolute;
-                                top: 3px;
-                                right: 8px;
-                                color: #333;
+                                top: 10px;
+                                right: 20px;
                             }
                             .recibo+.recibo {
-                                margin-top: 12px;
+                                margin-top: 50px;
+                            }
+                            .recibo+.recibo .imagemRecibo {
+                                margin-top: 70px;
                             }
                             .reciboFooter {
                                 text-align: center;
-                                margin-top: 6px;
-                                padding-top: 5px;
-                                border-top: 1px solid #ddd;
-                                font-size: 10px;
-                            }
-                            .reciboFooter p {
-                                margin: 2px 0;
                             }
                         </style>
                     </head>
